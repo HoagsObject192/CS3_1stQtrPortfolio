@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+   <h2> Q1 3rd Graded Exercise submitted by name of section</h2>
+   <h4>Guess the Number: ****</h4>
+   <h4>The number is between 1 and 100</h4>
+
+   <label for="guess">Enter your guess:</label>
+    <input type="text" id="guess" name="guess" placeholder=""><br> 
+
+    <button onclick="checkIt()">Submit Guess</button>
+
+    <h4>Result: <span id="result"></span></h4>
+
+    <script>
+
+       var dNumber = Math.floor(Math.random() * 100) + 1; // generates a number from 1  to 100 when the page loads
+
+        function checkIt() {
+
+            var guess = document.getElementById("guess").value;
+            var conf = "0";
+
+            if (guess == dNumber) {
+                conf = "Exact!"
+            } else if (guess < dNumber) {
+                conf = "Lower";
+            } else {
+                conf = "Higher";
+            }
+            document.getElementById("result").innerText = conf;
+        }
+    </script>
+
+</body>
+
+</html>
